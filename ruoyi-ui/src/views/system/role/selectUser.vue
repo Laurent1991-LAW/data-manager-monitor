@@ -5,7 +5,7 @@
       <el-form-item label="User  Name " prop="userName">
         <el-input
           v-model="queryParams.userName"
-          placeholder="EnterUser  Name "
+          placeholder="Enter user name "
           clearable
           @keyup.enter.native="handleQuery"
         />
@@ -13,7 +13,7 @@
       <el-form-item label="Phone Number" prop="phonenumber">
         <el-input
           v-model="queryParams.phonenumber"
-          placeholder="EnterPhone Number"
+          placeholder="Enter phone number"
           clearable
           @keyup.enter.native="handleQuery"
         />
@@ -26,10 +26,10 @@
     <el-row>
       <el-table @row-click="clickRow" ref="table" :data="userList" @selection-change="handleSelectionChange" height="260px">
         <el-table-column type="selection" width="55"></el-table-column>
-        <el-table-column label="User  Name " prop="userName" :show-overflow-tooltip="true" />
-        <el-table-column label="User 昵称" prop="nickName" :show-overflow-tooltip="true" />
-        <el-table-column label="邮箱" prop="email" :show-overflow-tooltip="true" />
-        <el-table-column label="手机" prop="phonenumber" :show-overflow-tooltip="true" />
+        <el-table-column label="Username " prop="userName" :show-overflow-tooltip="true" />
+        <el-table-column label="Nickname" prop="nickName" :show-overflow-tooltip="true" />
+        <el-table-column label="E-mail" prop="email" :show-overflow-tooltip="true" />
+        <el-table-column label="Phone Number" prop="phonenumber" :show-overflow-tooltip="true" />
         <el-table-column label="Status" align="center" prop="status">
           <template slot-scope="scope">
             <dict-tag :options="dict.type.sys_normal_disable" :value="scope.row.status"/>

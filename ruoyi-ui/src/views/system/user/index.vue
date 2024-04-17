@@ -30,10 +30,10 @@
       <!--User 数据-->
       <el-col :span="20" :xs="24">
         <el-form :model="queryParams" ref="queryForm" size="small" :inline="true" v-show="showSearch" label-width="150px">
-          <el-form-item label="User  Name " prop="userName">
+          <el-form-item label="Username " prop="userName">
             <el-input
               v-model="queryParams.userName"
-              placeholder="EnterUser  Name "
+              placeholder="Enter user name "
               clearable
               style="width: 240px"
               @keyup.enter.native="handleQuery"
@@ -42,7 +42,7 @@
           <el-form-item label="Phone Number" prop="phonenumber">
             <el-input
               v-model="queryParams.phonenumber"
-              placeholder="EnterPhone Number"
+              placeholder="Enter phone number"
               clearable
               style="width: 240px"
               @keyup.enter.native="handleQuery"
@@ -51,7 +51,7 @@
           <el-form-item label="Status" prop="status">
             <el-select
               v-model="queryParams.status"
-              placeholder="User Status"
+              placeholder="choose status"
               clearable
               style="width: 240px"
             >

@@ -1,10 +1,10 @@
 <template>
   <div class="app-container">
      <el-form :model="queryParams" ref="queryForm" size="small" :inline="true" v-show="showSearch">
-      <el-form-item label="User  Name " prop="userName">
+      <el-form-item label="Username " prop="userName">
         <el-input
           v-model="queryParams.userName"
-          placeholder="EnterUser  Name "
+          placeholder="Enter user name"
           clearable
           style="width: 240px"
           @keyup.enter.native="handleQuery"
@@ -13,7 +13,7 @@
       <el-form-item label="Phone Number" prop="phonenumber">
         <el-input
           v-model="queryParams.phonenumber"
-          placeholder="EnterPhone Number"
+          placeholder="Enter phone number"
           clearable
           style="width: 240px"
           @keyup.enter.native="handleQuery"
@@ -34,7 +34,7 @@
           size="mini"
           @click="openSelectUser"
           v-hasPermi="['system:role:add']"
-        >添加User </el-button>
+        >Add User </el-button>
       </el-col>
       <el-col :span="1.5">
         <el-button
@@ -61,10 +61,10 @@
 
     <el-table v-loading="loading" :data="userList" @selection-change="handleSelectionChange">
       <el-table-column type="selection" width="55" align="center" />
-      <el-table-column label="User  Name " prop="userName" :show-overflow-tooltip="true" />
-      <el-table-column label="User 昵称" prop="nickName" :show-overflow-tooltip="true" />
-      <el-table-column label="邮箱" prop="email" :show-overflow-tooltip="true" />
-      <el-table-column label="手机" prop="phonenumber" :show-overflow-tooltip="true" />
+      <el-table-column label="Username " prop="userName" :show-overflow-tooltip="true" />
+      <el-table-column label="Nickname" prop="nickName" :show-overflow-tooltip="true" />
+      <el-table-column label="E-mail" prop="email" :show-overflow-tooltip="true" />
+      <el-table-column label="Phone" prop="phonenumber" :show-overflow-tooltip="true" />
       <el-table-column label="Status" align="center" prop="status">
         <template slot-scope="scope">
           <dict-tag :options="dict.type.sys_normal_disable" :value="scope.row.status"/>
@@ -83,7 +83,7 @@
             icon="el-icon-circle-close"
             @click="cancelAuthUser(scope.row)"
             v-hasPermi="['system:role:remove']"
-          >取消授权</el-button>
+          >Cancel</el-button>
         </template>
       </el-table-column>
     </el-table>

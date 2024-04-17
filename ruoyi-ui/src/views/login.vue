@@ -1,7 +1,8 @@
 <template>
   <div class="login">
+    <img class="pic" src="../assets/images/login-background.gif"/>
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form">
-      <h3 class="title">LawPilot DataNavigator & SystemScope</h3>
+      <h3 class="title">Hi, this is Lauren ! <br> Welcome to my portfolio project</h3>
       <el-form-item prop="username">
         <el-input
           v-model="loginForm.username"
@@ -56,7 +57,7 @@
     </el-form>
     <!--  底部  -->
     <div class="el-login-footer">
-      <span>Copyright © 2023-2024 LaurenL. All Rights Reserved.</span>
+      <span>Copyright © 2023-2024 Lauren L. All Rights Reserved.</span>
     </div>
   </div>
 </template>
@@ -156,24 +157,31 @@ export default {
 </script>
 
 <style rel="stylesheet/scss" lang="scss">
+.pic {
+  height: 480px;
+  width: 800px;
+  margin-top: 60px;
+  margin-right: 40px;
+  pointer-events: none;
+}
 .login {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  background-image: url("../assets/images/login-background.jpg");
-  background-size: cover;
 }
 .title {
   margin: 0px auto 30px auto;
   text-align: center;
+  line-height: 25px;
+  height: 40px;
   color: #707070;
 }
-
 .login-form {
-  border-radius: 6px;
-  background: #ffffff;
-  width: 400px;
+  margin-right: 40px;
+  border-radius: 10px;
+  background: #d9d1d1;
+  width: 330px;
   padding: 25px 25px 5px 25px;
   .el-input {
     height: 38px;
@@ -208,7 +216,7 @@ export default {
   bottom: 0;
   width: 100%;
   text-align: center;
-  color: #fff;
+  color: #3b3737;
   font-family: Arial;
   font-size: 12px;
   letter-spacing: 1px;
