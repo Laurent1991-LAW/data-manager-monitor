@@ -15,7 +15,7 @@
         </div>
         <div class="head-container">
           <el-tree
-            :data="deptOptions"
+            :data=""
             :props="defaultProps"
             :expand-on-click-node="false"
             :filter-node-method="filterNode"
@@ -632,7 +632,7 @@ export default {
     /** Delete按钮Action */
     handleDelete(row) {
       const userIds = row.userId || this.ids;
-      this.$modal.confirm('Confirm delete user "' + userIds + '" related data ?').then(function() {
+      this.$modal.confirm('Confirm to delete user "' + userIds + '" related data ?').then(function() {
         return delUser(userIds);
       }).then(() => {
         this.getList();

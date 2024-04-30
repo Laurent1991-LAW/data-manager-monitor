@@ -300,7 +300,7 @@ export default {
     /** Delete按钮Action */
     handleDelete(row) {
       const noticeIds = row.noticeId || this.ids
-      this.$modal.confirm('Confirm delete Number "' + noticeIds + '"?').then(function() {
+      this.$modal.confirm('Confirm to delete number "' + noticeIds + '" notice ?').then(function() {
         return delNotice(noticeIds);
       }).then(() => {
         this.getList();

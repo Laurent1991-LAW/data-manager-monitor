@@ -160,8 +160,8 @@
     />
 
     <!-- ActionLog Details -->
-    <el-dialog title="ActionLog Details" :visible.sync="open" width="800px" append-to-body>
-      <el-form ref="form" :model="form" label-width="100px" size="mini">
+    <el-dialog title="Log Details" :visible.sync="open" width="1000px" append-to-body>
+      <el-form ref="form" :model="form" label-width="180px" size="mini">
         <el-row>
           <el-col :span="12">
             <el-form-item label="Menu：">{{ form.title }} / {{ typeFormat(form) }}</el-form-item>
@@ -295,7 +295,7 @@ export default {
     /** Delete按钮Action */
     handleDelete(row) {
       const operIds = row.operId || this.ids;
-      this.$modal.confirm('Confirm delete Log Number "' + operIds + '"?').then(function() {
+      this.$modal.confirm('Confirm to delete number "' + operIds + '"log ?').then(function() {
         return delOperlog(operIds);
       }).then(() => {
         this.getList();

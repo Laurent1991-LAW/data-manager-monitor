@@ -342,7 +342,7 @@ export default {
     /** Delete按钮Action */
     handleDelete(row) {
       const tableIds = row.tableId || this.ids;
-      this.$modal.confirm('Confirm delete 表Number为"' + tableIds + '"的数据项？').then(function() {
+      this.$modal.confirm('Confirm to delete table number "' + tableIds + '"?').then(function() {
         return delTable(tableIds);
       }).then(() => {
         this.getList();

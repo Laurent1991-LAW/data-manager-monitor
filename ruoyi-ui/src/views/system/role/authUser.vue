@@ -45,7 +45,7 @@
           :disabled="multiple"
           @click="cancelAuthUserAll"
           v-hasPermi="['system:role:remove']"
-        >批量取消授权</el-button>
+        >Authorization Batch Cancel</el-button>
       </el-col>
       <el-col :span="1.5">
         <el-button

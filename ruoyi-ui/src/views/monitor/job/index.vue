@@ -241,7 +241,7 @@
     </el-dialog>
 
     <!-- TaskLog Details -->
-    <el-dialog title="TaskDetails" :visible.sync="openView" width="700px" append-to-body>
+    <el-dialog title="Task Details" :visible.sync="openView" width="700px" append-to-body>
       <el-form ref="form" :model="form" label-width="120px" size="mini">
         <el-row>
           <el-col :span="12">
@@ -495,7 +495,7 @@ export default {
     /** Delete按钮Action */
     handleDelete(row) {
       const jobIds = row.jobId || this.ids;
-      this.$modal.confirm('Confirm delete Task "' + jobIds + '"?').then(function() {
+      this.$modal.confirm('Confirm to delete Task "' + jobIds + '"?').then(function() {
         return delJob(jobIds);
       }).then(() => {
         this.getList();

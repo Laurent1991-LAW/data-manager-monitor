@@ -158,10 +158,9 @@ export default {
 
 <style rel="stylesheet/scss" lang="scss">
 .pic {
-  height: 480px;
-  width: 800px;
-  margin-top: 60px;
-  margin-right: 40px;
+  height: 80%;
+  width: 60%;
+  margin-right: 5%;
   pointer-events: none;
 }
 .login {
@@ -172,6 +171,7 @@ export default {
 }
 .title {
   margin: 0px auto 30px auto;
+  font-size: 18px;
   text-align: center;
   line-height: 25px;
   height: 40px;
@@ -181,7 +181,7 @@ export default {
   margin-right: 40px;
   border-radius: 10px;
   background: #d9d1d1;
-  width: 330px;
+  width: 350px;
   padding: 25px 25px 5px 25px;
   .el-input {
     height: 38px;

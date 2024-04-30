@@ -291,7 +291,7 @@ export default {
     /** Delete按钮Action */
     handleDelete(row) {
       const postIds = row.postId || this.ids;
-      this.$modal.confirm('Confirm delete Position Number为"' + postIds + '"的数据项？').then(function() {
+      this.$modal.confirm('Confirm to delete position number "' + postIds + '"?').then(function() {
         return delPost(postIds);
       }).then(() => {
         this.getList();

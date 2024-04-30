@@ -5,7 +5,8 @@
       <el-col :sm="24" :lg="12" style="padding-left: 20px">
         <h2>About</h2>
         <p>
-          This management platform is designed to be applicable across a wide array of web applications, including but not limited to website monitor backends, member centers, Content Management Systems (CMS), Customer Relationship Management (CRM), Office Automation (OA), and more. Moreover, users can deeply customize to build even more robust systems tailored to their needs. The entire front-end and back-end codebase is neatly encapsulated for simplicity and ease of use, minimizing the likelihood of errors.
+          This management platform is designed to be applicable across a wide array of web applications, including but not limited to website application monitor, Membership Center, Content Management Systems (CMS), Customer Relationship Management (CRM), Office Automation (OA), and more.
+          Plus, you can deeply customize to build even more robust systems tailored to your or your clients needs.
         </p>
         <p>
           <b>Current Version:</b> <span>v{{ version }}</span>
@@ -61,7 +62,7 @@
               >
             </p>
             <p>
-              <i class="el-icon-chat-dot-round"></i>WhatsApp : <a
+              <i class="el-icon-chat-dot-round"></i> WhatsApp : <a
                 href="javascript:;"
                 >+86 199 8125 9811 (China mainland)</a
               >
@@ -85,7 +86,7 @@ export default {
   data() {
     return {
       // 版本号
-      version: "3.8.7"
+      version: "1.0"
     };
   },
   methods: {
@@ -101,7 +102,7 @@ export default {
   blockquote {
     padding: 10px 20px;
     margin: 0 0 20px;
-    font-size: 17.5px;
+    font-size: 20px;
     border-left: 5px solid #eee;
   }
   hr {
@@ -120,7 +121,7 @@ export default {
   }
 
   font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   color: #676a6c;
   overflow-x: hidden;
 
@@ -134,12 +135,13 @@ export default {
 
   h2 {
     margin-top: 10px;
-    font-size: 26px;
+    font-size: 30px;
     font-weight: 100;
   }
 
   p {
     margin-top: 10px;
+    line-height: 20px;
 
     b {
       font-weight: 700;

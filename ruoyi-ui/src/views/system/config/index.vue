@@ -319,7 +319,7 @@ export default {
     /** Delete按钮Action */
     handleDelete(row) {
       const configIds = row.configId || this.ids;
-      this.$modal.confirm('Confirm delete"' + configIds + '"?').then(function() {
+      this.$modal.confirm('Confirm to delete"' + configIds + '"?').then(function() {
           return delConfig(configIds);
         }).then(() => {
           this.getList();

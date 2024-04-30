@@ -103,26 +103,26 @@
     </el-table>
 
     <!-- 添加或EditMenu 对话框 -->
-    <el-dialog :title="title" :visible.sync="open" width="680px" append-to-body>
-      <el-form ref="form" :model="form" :rules="rules" label-width="100px">
+    <el-dialog :title="title" :visible.sync="open" width="880px" append-to-body>
+      <el-form ref="form" :model="form" :rules="rules" label-width="130px">
         <el-row>
           <el-col :span="24">
-            <el-form-item label="上级Menu " prop="parentId">
+            <el-form-item label="Parent Menu " prop="parentId">
               <treeselect
                 v-model="form.parentId"
                 :options="menuOptions"
                 :normalizer="normalizer"
                 :show-count="true"
-                placeholder="选择上级Menu "
+                placeholder="Choose parent menu "
               />
             </el-form-item>
           </el-col>
           <el-col :span="24">
             <el-form-item label="Menu Type" prop="menuType">
               <el-radio-group v-model="form.menuType">
-                <el-radio label="M">目录</el-radio>
+                <el-radio label="M">Catalogue</el-radio>
                 <el-radio label="C">Menu </el-radio>
-                <el-radio label="F">按钮</el-radio>
+                <el-radio label="F">Button</el-radio>
               </el-radio-group>
             </el-form-item>
           </el-col>
@@ -135,7 +135,7 @@
                 @show="$refs['iconSelect'].reset()"
               >
                 <IconSelect ref="iconSelect" @selected="selected" :active-icon="form.icon" />
-                <el-input slot="reference" v-model="form.icon" placeholder="点击选择Icon" readonly>
+                <el-input slot="reference" v-model="form.icon" placeholder="Click to choose icon" readonly>
                   <svg-icon
                     v-if="form.icon"
                     slot="prefix"
@@ -149,11 +149,11 @@
           </el-col>
           <el-col :span="12">
             <el-form-item label="Menu  Name " prop="menuName">
-              <el-input v-model="form.menuName" placeholder="EnterMenu  Name " />
+              <el-input v-model="form.menuName" placeholder="Enter menu name " />
             </el-form-item>
           </el-col>
           <el-col :span="12">
-            <el-form-item label="显示Order" prop="orderNum">
+            <el-form-item label="Show Order" prop="orderNum">
               <el-input-number v-model="form.orderNum" controls-position="right" :min="0" />
             </el-form-item>
           </el-col>
@@ -163,11 +163,11 @@
                 <el-tooltip content="选择是外链则路由地址需要以`http(s)://`开头" placement="top">
                 <i class="el-icon-question"></i>
                 </el-tooltip>
-                是否外链
+                Outer Link
               </span>
               <el-radio-group v-model="form.isFrame">
-                <el-radio label="0">是</el-radio>
-                <el-radio label="1">否</el-radio>
+                <el-radio label="0">Yes</el-radio>
+                <el-radio label="1">No</el-radio>
               </el-radio-group>
             </el-form-item>
           </el-col>
@@ -177,9 +177,9 @@
                 <el-tooltip content="访问的路由地址，如：`user`，如外网地址需内链访问则以`http(s)://`开头" placement="top">
                 <i class="el-icon-question"></i>
                 </el-tooltip>
-                路由地址
+                Path
               </span>
-              <el-input v-model="form.path" placeholder="Enter路由地址" />
+              <el-input v-model="form.path" placeholder="Enter routing path" />
             </el-form-item>
           </el-col>
           <el-col :span="12" v-if="form.menuType == 'C'">
@@ -190,7 +190,7 @@
                 </el-tooltip>
                 组件Path
               </span>
-              <el-input v-model="form.component" placeholder="Enter组件Path" />
+              <el-input v-model="form.component" placeholder="Enter component path" />
             </el-form-item>
           </el-col>
           <el-col :span="12" v-if="form.menuType != 'M'">
@@ -235,7 +235,7 @@
                 <el-tooltip content="选择隐藏则路由将不会出现在侧边栏，但仍然可以访问" placement="top">
                 <i class="el-icon-question"></i>
                 </el-tooltip>
-                显示Status
+                Show status
               </span>
               <el-radio-group v-model="form.visible">
                 <el-radio
@@ -311,13 +311,13 @@ export default {
       // 表单校验
       rules: {
         menuName: [
-          { required: true, message: "Menu  Name can't be blank", trigger: "blur" }
+          { required: true, message: "Menu name can't be blank", trigger: "blur" }
         ],
         orderNum: [
-          { required: true, message: "Menu 顺序can't be blank", trigger: "blur" }
+          { required: true, message: "Menu order can't be blank", trigger: "blur" }
         ],
         path: [
-          { required: true, message: "路由地址can't be blank", trigger: "blur" }
+          { required: true, message: "Path can't be blank", trigger: "blur" }
         ]
       }
     };
@@ -353,7 +353,7 @@ export default {
     getTreeselect() {
       listMenu().then(response => {
         this.menuOptions = [];
-        const menu = { menuId: 0, menuName: '主类目', children: [] };
+        const menu = { menuId: 0, menuName: 'Choose from current menu', children: [] };
         menu.children = this.handleTree(response.data, "menuId");
         this.menuOptions.push(menu);
       });
@@ -440,7 +440,7 @@ export default {
     },
     /** Delete按钮Action */
     handleDelete(row) {
-      this.$modal.confirm('Confirm delete  Name 为"' + row.menuName + '"的数据项？').then(function() {
+      this.$modal.confirm('Confirm to delete "' + row.menuName + '"?').then(function() {
         return delMenu(row.menuId);
       }).then(() => {
         this.getList();

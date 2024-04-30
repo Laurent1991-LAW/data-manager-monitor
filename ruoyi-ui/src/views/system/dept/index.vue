@@ -328,7 +328,7 @@ export default {
     },
     /** Delete按钮Action */
     handleDelete(row) {
-      this.$modal.confirm('Confirm delete "' + row.deptName + '"?').then(function() {
+      this.$modal.confirm('Confirm to delete "' + row.deptName + '"?').then(function() {
         return delDept(row.deptId);
       }).then(() => {
         this.getList();

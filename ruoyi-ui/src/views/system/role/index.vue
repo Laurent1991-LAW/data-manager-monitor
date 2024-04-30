@@ -138,9 +138,9 @@
             <el-button size="mini" type="text" icon="el-icon-d-arrow-right">More</el-button>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item command="handleDataScope" icon="el-icon-circle-check"
-                v-hasPermi="['system:role:edit']">Permission</el-dropdown-item>
+                v-hasPermi="['system:role:edit']">Permissions</el-dropdown-item>
               <el-dropdown-item command="handleAuthUser" icon="el-icon-user"
-                v-hasPermi="['system:role:edit']">User Allocation </el-dropdown-item>
+                v-hasPermi="['system:role:edit']">Assign Users </el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
         </template>
@@ -157,9 +157,9 @@
 
     <!-- 添加或EditRole 配置对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="500px" append-to-body>
-      <el-form ref="form" :model="form" :rules="rules" label-width="130px">
+      <el-form ref="form" :model="form" :rules="rules" label-width="150px">
         <el-form-item label="Description" prop="roleName">
-          <el-input v-model="form.roleName" placeholder="Enter Role Description " />
+          <el-input v-model="form.roleName" placeholder="Enter role description " />
         </el-form-item>
         <el-form-item prop="roleKey">
           <span slot="label">
@@ -209,7 +209,7 @@
 
     <!-- 分配Role 数据权限对话框 -->
     <el-dialog :title="title" :visible.sync="openDataScope" width="500px" append-to-body>
-      <el-form :model="form" label-width="80px">
+      <el-form :model="form" label-width="150px">
         <el-form-item label="Role  Name ">
           <el-input v-model="form.roleName" :disabled="true" />
         </el-form-item>
@@ -238,7 +238,7 @@
             ref="dept"
             node-key="id"
             :check-strictly="!form.deptCheckStrictly"
-            empty-text="加载中，请稍候"
+            empty-text="Loading..."
             :props="defaultProps"
           ></el-tree>
         </el-form-item>
@@ -522,7 +522,7 @@ export default {
             })
           });
         });
-        this.title = "EditRole ";
+        this.title = "Edit Role ";
       });
     },
     /** 选择Role 权限范围触发 */
@@ -543,7 +543,7 @@ export default {
             this.$refs.dept.setCheckedKeys(res.checkedKeys);
           });
         });
-        this.title = "Allocate Permissions";
+        this.title = "Permissions";
       });
     },
     /** 分配User Action */
@@ -587,7 +587,7 @@ export default {
     /** Delete按钮Action */
     handleDelete(row) {
       const roleIds = row.roleId || this.ids;
-      this.$modal.confirm('Confirm delete Role Number "' + roleIds + '"?').then(function() {
+      this.$modal.confirm('Confirm to delete number "' + roleIds + '"role ?').then(function() {
         return delRole(roleIds);
       }).then(() => {
         this.getList();

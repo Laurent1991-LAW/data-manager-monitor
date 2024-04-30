@@ -268,7 +268,7 @@ export default {
     /** Delete按钮Action */
     handleDelete(row) {
       const jobLogIds = this.ids;
-      this.$modal.confirm('Confirm delete 调度Log Number为"' + jobLogIds + '"的数据项？').then(function() {
+      this.$modal.confirm('Confirm to delete log "' + jobLogIds + '"?').then(function() {
         return delJobLog(jobLogIds);
       }).then(() => {
         this.getList();

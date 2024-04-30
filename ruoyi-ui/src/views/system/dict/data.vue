@@ -383,7 +383,7 @@ export default {
     /** Delete按钮Action */
     handleDelete(row) {
       const dictCodes = row.dictCode || this.ids;
-      this.$modal.confirm('Confirm delete "' + dictCodes + '"?').then(function() {
+      this.$modal.confirm('Confirm to delete "' + dictCodes + '"?').then(function() {
         return delData(dictCodes);
       }).then(() => {
         this.getList();

@@ -322,7 +322,7 @@ export default {
     /** Delete按钮Action */
     handleDelete(row) {
       const dictIds = row.dictId || this.ids;
-      this.$modal.confirm('Confirm delete "' + dictIds + '"?').then(function() {
+      this.$modal.confirm('Confirm to delete "' + dictIds + '"?').then(function() {
         return delType(dictIds);
       }).then(() => {
         this.getList();

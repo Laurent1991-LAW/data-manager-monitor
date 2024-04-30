@@ -1,6 +1,6 @@
 <template>
   <!-- 授权User  -->
-  <el-dialog title="选择User " :visible.sync="visible" width="800px" top="5vh" append-to-body>
+  <el-dialog title="Choose user" :visible.sync="visible" width="800px" top="5vh" append-to-body>
     <el-form :model="queryParams" ref="queryForm" size="small" :inline="true">
       <el-form-item label="User  Name " prop="userName">
         <el-input

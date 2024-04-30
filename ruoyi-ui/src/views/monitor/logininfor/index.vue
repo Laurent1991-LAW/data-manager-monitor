@@ -209,7 +209,7 @@ export default {
     /** Delete按钮Action */
     handleDelete(row) {
       const infoIds = row.infoId || this.ids;
-      this.$modal.confirm('Confirm delete Number "' + infoIds + '"?').then(function() {
+      this.$modal.confirm('Confirm to delete number "' + infoIds + '" log ?').then(function() {
         return delLogininfor(infoIds);
       }).then(() => {
         this.getList();
